@@ -5,12 +5,12 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["ES2021"],
-    "module": "esnext",
+    "lib": ["ESNext", "ScriptHost", "DOM"],
+    "module": "NodeNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "outDir": "dist",
-    "target": "ES2021"
+    "target": "ESNext"
   },
   "exclude": ["node_modules", "dist"]
 }
