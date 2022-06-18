@@ -25,6 +25,7 @@ importers:
       c8: ^7.11.3
       nodemon: ^2.0.16
       pm2: ^5.2.0
+      regenerator-runtime: ^0.13.9
       sinon: ^14.0.0
     devDependencies:
       '@ava/typescript': 3.0.1
@@ -36,6 +37,7 @@ importers:
       c8: 7.11.3
       nodemon: 2.0.16
       pm2: 5.2.0
+      regenerator-runtime: 0.13.9
       sinon: 14.0.0
 
   contracts/erc-20:
@@ -8503,7 +8505,6 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
-    dev: false
 
   /regenerator-transform/0.10.1:
     resolution: {integrity: sha512-PJepbvDbuK1xgIgnau7Y90cwaAmO/LCLMI2mPvaXq2heGMR3aWW5/BQvYrhJ8jgmQjXewXvBjzfqKcVOmhjZ6Q==}

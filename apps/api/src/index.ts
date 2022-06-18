@@ -1,1 +1,3 @@
-console.log("Hello World");
+import { main } from "./main.js";
+
+main();
