@@ -1,0 +1,28 @@
+{
+  "name": "@chainized/api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint src/**/*.ts",
+    "build": "swc src -d dist",
+    "test": "ava"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chainized/eslint-config-node": "workspace:*",
+    "@chainized/tsconfig": "workspace:*",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.198",
+    "nodemon": "^2.0.16",
+    "pm2": "^5.2.0",
+    "sinon": "^14.0.0",
+    "ava": "^4.3.0",
+    "c8": "^7.11.3",
+    "@ava/typescript": "^3.0.1"
+  }
+}
