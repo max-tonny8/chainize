@@ -1,0 +1,4 @@
+{
+  "extends": "@chainized/tsconfig/module.json",
+  "include": ["index.ts"]
+}
