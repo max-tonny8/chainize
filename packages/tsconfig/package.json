@@ -2,7 +2,7 @@
   "name": "@chainized/tsconfig",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "core.json",
   "files": [
     "node.json"
   ],

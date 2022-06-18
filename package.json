@@ -15,7 +15,8 @@
   "devDependencies": {
     "@chainized/prettier-config": "workspace:*",
     "prettier": "^2.7.1",
-    "turbo": "^1.2.16"
+    "turbo": "^1.2.16",
+    "eslint": "^8.16.0"
   },
   "engines": {
     "node": ">=18.0",
