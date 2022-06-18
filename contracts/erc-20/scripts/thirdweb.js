@@ -1,5 +1,5 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
-import config from "config-global";
+import config from "@chainized/config";
 
 // Thirdweb is insane tool which helps with development
 // of small smart-contracts (usually the ones which are
@@ -8,6 +8,7 @@ import config from "config-global";
 // https://portal.thirdweb.com/typescript
 
 const privateKey = config.EVM_PRIVATE_KEY;
+
 const sdk = ThirdwebSDK.fromPrivateKey(privateKey, "rinkeby");
 
 const deployedToken = sdk.deployer.deployToken({
