@@ -7,17 +7,16 @@ import config from "config-global";
 // will deploy ERC-20 Token to selected blockchain.
 // https://portal.thirdweb.com/typescript
 
-console.log(config.SAMPLE);
+const privateKey = config.EVM_PRIVATE_KEY;
+const sdk = ThirdwebSDK.fromPrivateKey(privateKey, "rinkeby");
 
-// const privateKey = "0x...";
-// const sdk = ThirdwebSDK.fromPrivateKey(privateKey, "rinkeby");
+const deployedToken = sdk.deployer.deployToken({
+  name: "Test Token",
+  symbol: "TTTT",
+  primary_sale_recipient: config.EVM_ADDRESS,
+});
 
-// const deployedToken = sdk.deployer.deployToken({
-//   name: "Test Token",
-//   symbol: "TTTT",
-// });
+const token = sdk.getToken(deployedToken);
+const walletAddress = config.EVM_ADDRESS;
 
-// const token = sdk.getToken(deployedToken);
-// const walletAddress = "0x...";
-
-// await token.mintTo(walletAddress, 100);
+await token.mintTo(walletAddress, 100);
