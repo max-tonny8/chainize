@@ -23,13 +23,11 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "envalid": "^7.3.1",
-    "find-up": "4.1",
-    "typescript": "4.8.0-dev.20220618"
+    "find-up": "4.1"
   },
   "devDependencies": {
     "@chainized/tsconfig": "workspace:*",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.198",
+    "typescript": "4.8.0-dev.20220618",
     "tsup": "^6.1.2"
   }
 }
