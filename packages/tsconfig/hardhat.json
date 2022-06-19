@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "HardHat",
+  "extends": "./core.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es2018",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true
+  },
+  "exclude": ["node_modules", "dist"]
+}

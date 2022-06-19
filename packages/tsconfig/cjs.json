@@ -5,13 +5,13 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["ESNext", "ScriptHost", "DOM"],
-    "module": "ESNext",
+    "lib": ["ES2016", "ScriptHost", "DOM"],
+    "module": "CommonJS",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "declaration": true,
     "declarationMap": true,
-    "target": "ESNext"
+    "target": "ES2016"
   },
   "exclude": ["node_modules", "dist"]
 }

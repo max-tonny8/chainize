@@ -1,4 +1,7 @@
 {
   "extends": "@chainized/tsconfig/module.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
   "include": ["index.ts"]
 }

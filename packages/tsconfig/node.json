@@ -9,7 +9,6 @@
     "module": "NodeNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "outDir": "dist",
     "target": "ESNext"
   },
   "exclude": ["node_modules", "dist"]

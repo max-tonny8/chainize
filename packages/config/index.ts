@@ -1,8 +1,8 @@
 import { config } from "dotenv";
-import { findUpSync } from "find-up";
+import findUp from "find-up";
 import { cleanEnv, str } from "envalid";
 
-config({ path: findUpSync(".env") });
+config({ path: findUp.sync(".env") });
 
 const env = cleanEnv(process.env, {
   EVM_NETWORK: str(),
