@@ -106,6 +106,12 @@ importers:
       typechain: 5.2.0_typescript@4.7.4
       typescript: 4.7.4
 
+  contracts/SPL:
+    specifiers:
+      '@project-serum/anchor-cli': ^0.24.2
+    devDependencies:
+      '@project-serum/anchor-cli': 0.24.2
+
   packages/config:
     specifiers:
       '@chainized/tsconfig': workspace:*
@@ -1071,6 +1077,11 @@ packages:
   /@prisma/prisma-fmt-wasm/3.14.0-36.2b0c12756921c891fec4f68d9444e18c7d5d4a6a:
     resolution: {integrity: sha512-YwiGDAfUqLPz1NIyd6y6LyT1ViiTCXNx7AFWuMwb7aGhBmzhfuTeo/MQpzlA9x90wKh2ACJ4Fa3nZS5Wvr8xbg==}
     dev: false
+
+  /@project-serum/anchor-cli/0.24.2:
+    resolution: {integrity: sha512-3D+fB3n/PAmY5AF2P+zxNvV2ZKx6YLoDlqHXqFa7wGqxVZfTo4WM2O7ChJjU2WIxS/WoTt6qXnehbuGUJ1JXig==}
+    hasBin: true
+    dev: true
 
   /@resolver-engine/core/0.3.3:
     resolution: {integrity: sha512-eB8nEbKDJJBi5p5SrvrvILn4a0h42bKtbCTri3ZxCGt6UvoQyp7HnGOfki944bUjBSHKK3RvgfViHn+kqdXtnQ==}
