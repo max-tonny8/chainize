@@ -1,0 +1,12 @@
+{
+  "extends": "@chainized/tsconfig/hardhat.json",
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "declaration": true
+  },
+  "include": ["./scripts", "./test", "./typechain"],
+  "files": ["./hardhat.config.ts"],
+  "compileOnSave": true
+}
