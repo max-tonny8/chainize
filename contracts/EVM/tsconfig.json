@@ -8,5 +8,6 @@
   },
   "include": ["./scripts", "./test", "./typechain"],
   "files": ["./hardhat.config.ts"],
+  "exclude": ["dist", "node_modules", "**/*.d.ts"],
   "compileOnSave": true
 }
