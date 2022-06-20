@@ -1,3 +1,12 @@
 {
-  "recommendations": ["esbenp.prettier-vscode", "JuanBlanco.solidity"]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "juanblanco.solidity",
+    "github.github-vscode-theme",
+    "github.vscode-pull-request-github",
+    "github.copilot-nightly",
+    "GitHub.copilot-labs",
+    "github.codespaces",
+    "github.remotehub"
+  ]
 }
