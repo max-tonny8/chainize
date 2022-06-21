@@ -25,5 +25,8 @@
     "pm2": "^5.2.0",
     "regenerator-runtime": "^0.13.9",
     "sinon": "^14.0.0"
+  },
+  "dependencies": {
+    "@chainized/config": "workspace:^1.0.0"
   }
 }

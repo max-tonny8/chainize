@@ -1,3 +1,5 @@
+import env from "@chainized/config";
+
 export async function main() {
-  console.log("Hello World");
+  console.log(env.EVM_ADDRESS);
 }

@@ -1,0 +1,8 @@
+---
+json_rpc_url: "https://api.devnet.solana.com"
+websocket_url: ""
+keypair_path: ".solana/keinsell.json"
+address_labels:
+  8KTGNe5Er1ppDNQk2JFVaFY8p4xssTDC2QoGQxBUCEV7: keinsell
+  "11111111111111111111111111111111": System Program
+commitment: confirmed
