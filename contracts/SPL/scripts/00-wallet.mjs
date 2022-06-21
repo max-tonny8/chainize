@@ -1,0 +1,47 @@
+#!/usr/bin/env zx
+
+import "zx/globals";
+import env from "@chainized/config";
+
+$.verbose = false;
+
+await $`solana config set --url https://api.devnet.solana.com -k ${env.SOLANA_ID}`;
+echo(`Configured Solana CLI: ${env.SOLANA_CONFIG}`);
+
+try {
+  await $`solana-keygen new -o ${env.SOLANA_ID} -s --no-bip39-passphrase`;
+  echo(
+    `Generated new wallet: ${await $`solana-keygen pubkey ${env.SOLANA_ID}`}`
+  );
+} catch (error) {
+  echo(
+    `Using existing wallet: ${await $`solana-keygen pubkey ${env.SOLANA_ID}`}`
+  );
+}
+
+let SOLANA_PK = await $`solana-keygen pubkey ${env.SOLANA_ID}`;
+await $`solana-keygen verify ${SOLANA_PK} ${env.SOLANA_ID}`;
+
+await $`cp ${env.SOLANA_ID} ./solana/id.json`;
+await $`cp ${env.SOLANA_CONFIG} ./solana/config.yaml`;
+
+let airdropRawMessage =
+  await $`solana airdrop 3 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
+
+let signatureProcessing;
+airdropRawMessage
+  .toString()
+  .split(`\n`)
+  .slice(1, 4)
+  .map((line) => {
+    signatureProcessing = signatureProcessing + line;
+    return line;
+  });
+
+const airdropSignature = JSON.parse(signatureProcessing.slice(9)).signature;
+
+await $`solana confirm ${airdropSignature} -C ${env.SOLANA_CONFIG}`;
+
+echo(
+  `Balance: ${await $`solana balance ${env.SOLANA_ID} -C ${env.SOLANA_CONFIG}`}`
+);
