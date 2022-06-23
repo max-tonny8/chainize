@@ -6,7 +6,7 @@
   "scripts": {
     "build": "anchor build",
     "test": "anchor test --skip-build",
-    "deploy": "anchor deploy",
+    "deploy": "zx scripts/deploy.mjs",
     "postinstall": "zx scripts/postinstall.mjs",
     "airdrop": "zx scripts/airdrop.mjs"
   },
