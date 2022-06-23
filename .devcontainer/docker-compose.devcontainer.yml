@@ -1,0 +1,16 @@
+version: "3"
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  solana:
+    image: "solanalabs/solana:v1.10.26"
+    ports:
+      - "8899:8899"
+      - "8900:8900"
+      - "9900:9900"
+  ganache:
+    image: trufflesuite/ganache:latest
+    ports:
+      - "8545:8545"
