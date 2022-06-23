@@ -1171,6 +1171,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "token"
+version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+]
+
+[[package]]
 name = "toml"
 version = "0.5.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -22,6 +22,7 @@ test("Performs CPI from puppet master to puppet", async (t) => {
     PuppetMaster,
     puppetMaster.programId
   );
+
   // Initialize a new puppet account.
   const newPuppetAccount = anchor.web3.Keypair.generate();
 

@@ -17,4 +17,4 @@ cluster = "devnet"
 wallet = "./../../packages/config/solana/id.json"
 
 [scripts]
-test = "pnpm npx ava --timeout=10m --watch"
+test = "pnpm npx ava --timeout=10m"
