@@ -15,5 +15,5 @@ no-entrypoint = []
 cpi = ["no-entrypoint"]
 
 [dependencies]
-anchor-lang = 0.24.2
+anchor-lang = "0.24.2"
 puppet = { path = "../puppet", features = ["cpi"] }
