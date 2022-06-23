@@ -22,11 +22,11 @@ try {
 let SOLANA_PK = await $`solana-keygen pubkey ${env.SOLANA_ID}`;
 await $`solana-keygen verify ${SOLANA_PK} ${env.SOLANA_ID}`;
 
-await $`cp ${env.SOLANA_ID} ./solana/id.json`;
-await $`cp ${env.SOLANA_CONFIG} ./solana/config.yaml`;
+await $`cp ${env.SOLANA_ID} ./../../packages/config/solana/id.json`;
+await $`cp ${env.SOLANA_CONFIG} ./../../packages/config/solana/config.yaml`;
 
 let airdropRawMessage =
-  await $`solana airdrop 3 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
+  await $`solana airdrop 2 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
 
 let signatureProcessing;
 airdropRawMessage
