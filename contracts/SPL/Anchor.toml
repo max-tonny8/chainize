@@ -1,7 +1,9 @@
 [features]
 seeds = false
+
 [programs.localnet]
-app = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+puppet = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+puppet_master = "HmbTLCmaGvZhKnn1Zfa1JVnp7vkMV4DYVxPLWBVoN65L"
 
 [registry]
 url = "https://anchor.projectserum.com"

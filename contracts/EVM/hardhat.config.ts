@@ -40,8 +40,8 @@ const config: HardhatConfig = {
   solidity: "0.8.4",
   paths: {
     root: ".",
-    sources: "./src/contracts",
-    tests: "./src/test",
+    sources: "./programs",
+    tests: "./tests",
     artifacts: "./dist/artifacts",
     cache: "./dist/cache",
   },
