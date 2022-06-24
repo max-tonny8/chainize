@@ -19,11 +19,22 @@ RUN apt-get update \
     g++ \
     pkg-config \
     libudev-dev \
+    iptables \ 
     libssl-dev \
     make \
     build-essential \
     libclang-dev \
     llvm
+
+
+# [feature:docker_in_docker]
+# RUN apt-get update && \
+#     apt-get -qy full-upgrade && \
+#     apt-get install -qy curl && \
+#     apt-get install -qy curl && \
+#     curl -sSL https://get.docker.com/ | sh && \
+#     usermod -aG docker node && \
+#     service start docker
 
 # [optional:core:nvm]
 RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION}"
