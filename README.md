@@ -1,6 +1,6 @@
 # Chainized
 
-Previously this repository was dedicated only to `solana` learning and development, I've choosen monorepository idea because it's way more efficient to work especially when you're going to build additional packages for API or front-end.
+From multiple separated repositories for learning writing `solidity` and `rust` (`solana`) smart-contracts I've decided to merge everything into one place in monorepo structure, it's kinda more comforable to have every single package in one place and running whole project by single command - espcially when there will be `apps/api` and `apps/web` package to perform interfactions with contracts.
 
 ## Getting Started
 
