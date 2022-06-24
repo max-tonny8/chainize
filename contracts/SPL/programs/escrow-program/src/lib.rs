@@ -1,8 +1,10 @@
+// https://hackmd.io/@ironaddicteddog/solana-anchor-escrow
+// https://github.com/cqfd/quidproquo
+// https://github.com/coral-xyz/anchor/tree/master/tests/escrow
+
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, CloseAccount, Mint, SetAuthority, TokenAccount, Transfer};
 use spl_token::instruction::AuthorityType;
-
-// https://hackmd.io/@ironaddicteddog/solana-anchor-escrow
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
