@@ -17,7 +17,7 @@ Previously this repository was dedicated only to `solana` learning and developme
 
 ### Installation
 
-The installation process is trival, once you have installed `rust`, `anchor` and `solana` on your machine.
+The installation process is trival, once you have installed `rust`, `anchor` and `solana` on your machine. Due to repository specification you must setup `.env` before project installation `NODE_ENV="development"` is enough because we have development defaults. In case you're willing to use `docker` for development you're suppsed to override default variables which are focused on using testnets.
 
 ```
 $ pnpm install
