@@ -521,7 +521,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "escrow-program"
+name = "escrow"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",
