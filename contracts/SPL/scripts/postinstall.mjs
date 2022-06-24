@@ -5,7 +5,7 @@ import env from "@chainized/config";
 
 $.verbose = false;
 
-await $`solana config set --url https://api.devnet.solana.com -k ${env.SOLANA_ID}`;
+await $`solana config set --url ${env.SOLANA_NETWORK} -k ${env.SOLANA_ID}`;
 echo(`Configured Solana CLI: ${env.SOLANA_CONFIG}`);
 
 try {

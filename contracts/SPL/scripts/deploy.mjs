@@ -38,3 +38,9 @@ deployOutput.map((line, index) => {
 });
 
 console.log(programs);
+console.log('')
+console.log('-------- ANCHOR.TOML --------')
+console.log(`
+[programs.devnet]
+${programs.map((program) => `${program.name} = ${program.programId}`).join("\n")}
+`)

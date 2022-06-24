@@ -1,14 +1,6 @@
 [features]
 seeds = false
 
-[programs.localnet]
-puppet = "72MNWohxheBmfHpT8uA9CfYhKEo12V6dfab3Q1qFso5b"
-puppet_master = "5iMUsQ1TY3md3sgunFm1bDgvJjGhZb1MUswPnRXUD69b"
-
-[programs.devnet]
-puppet = "72MNWohxheBmfHpT8uA9CfYhKEo12V6dfab3Q1qFso5b"
-puppet_master = "5iMUsQ1TY3md3sgunFm1bDgvJjGhZb1MUswPnRXUD69b"
-
 [registry]
 url = "https://anchor.projectserum.com"
 
