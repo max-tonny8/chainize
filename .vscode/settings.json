@@ -1,7 +1,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "conventionalCommits.scopes": ["contract/spl", "contract/evm", "API"],
+  "conventionalCommits.scopes": ["deps"],
   "rust-analyzer.linkedProjects": ["contracts/SPL/Cargo.toml"],
   "rust-analyzer.procMacro.enable": false,
   "[rust]": {
