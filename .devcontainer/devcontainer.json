@@ -18,7 +18,11 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot-nightly",
+				"GitHub.copilot-labs",
+				"rust-lang.rust-analyzer"
 			]
 		}
 	},
@@ -28,7 +32,9 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pnpm install",
-
+	"containerEnv": {
+		"NODE_ENV": "development"
+	},
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
 	"features": {
