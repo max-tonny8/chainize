@@ -40,7 +40,7 @@ RUN apt-get update \
 RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION}"
 
 # [packages:npm] Uncomment if you want to install more global node packages
-RUN su node -c "npm install -g typescript@next pnpm yarn zx @project-serum/anchor@${ANCHOR_CLI}"
+RUN su node -c "npm install -g typescript@next pnpm yarn zx dprint @project-serum/anchor@${ANCHOR_CLI}"
 
 # [feature:rust]
 RUN su node -c "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && rustup --version && cargo --version && rustc --version"
