@@ -1,23 +1,15 @@
-// https://hackmd.io/@ironaddicteddog/solana-anchor-escrow
-// https://github.com/cqfd/quidproquo
-// https://github.com/coral-xyz/anchor/tree/master/tests/escrow
-
-//! An example of an escrow program, inspired by PaulX tutorial seen here
-//! https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/
-//! This example has some changes to implementation, but more or less should be the same overall
-//! Also gives examples on how to use some newer anchor features and CPI
+//! Escrow program inspired by [PaulX tutorrial](https://paulx.dev/blog/2021/01/14/programming-on-solana-an-introduction/). This program is modified by `anchor` developers and was found in [anchor's repository](https://github.com/coral-xyz/anchor/tree/master/tests/escrow).
 //!
-//! User (Initializer) constructs an escrow deal:
-//! - SPL token (X) they will offer and amount
-//! - SPL token (Y) count they want in return and amount
-//! - Program will take ownership of initializer's token X account
+//! #### Escrow Program
 //!
-//! Once this escrow is initialised, either:
-//! 1. User (Taker) can call the exchange function to exchange their Y for X
-//! - This will close the escrow account and no longer be usable
-//! OR
-//! 2. If no one has exchanged, the initializer can close the escrow account
-//! - Initializer will get back ownership of their token X account
+//! **User** (`Initializer`) constructs an escrow deal (`EscrowAccount`):
+//! - **SPL Token X** they will offer and amount
+//! - **SPL Token Y** count they want in return and amount
+//! - **Program** will take ownership of **User**'s **SPL Token X** account
+//!
+//! Once **Escrow** is initalised, either:
+//! - **User** (`Taker`) can call the exchange function to exchange their Y for X - this will close the escrow account and no longer be usable
+//! - If no one has exchanged, the initializer can close the escrow account - `Initializer` will get back ownership of their token X account
 
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, SetAuthority, Token, TokenAccount, Transfer};
@@ -92,6 +84,7 @@ pub mod escrow {
             ctx.accounts.escrow_account.taker_amount,
         )?;
 
+        // Set authority Initalizer account to PDA which is EscrowAccount.
         token::set_authority(
             ctx.accounts
                 .into_set_authority_context()
@@ -106,14 +99,18 @@ pub mod escrow {
 
 #[derive(Accounts)]
 #[instruction(initializer_amount: u64)]
+/// Struct used to store information about creator of escrow deal.
 pub struct InitializeEscrow<'info> {
     #[account(mut)]
+    /// `Account` user for a creation of `EscrowAccount` by `intialize_escrow()`. This variable points to an owner of escrow.
     pub initializer: Signer<'info>,
     #[account(
         mut,
         constraint = initializer_deposit_token_account.amount >= initializer_amount
     )]
+    /// `Account` (an public address) of **User** (`Initalizer`) on which tokens should be deposited while performing `exchange()` method on program (`escrow`).
     pub initializer_deposit_token_account: Account<'info, TokenAccount>,
+    /// `Account` (an public address) of **User** (`Initalizer`) on which tokens should be transfered after performing `exchange()` method on program (`escrow`).
     pub initializer_receive_token_account: Account<'info, TokenAccount>,
     #[account(init, payer = initializer, space = 8 + EscrowAccount::LEN)]
     pub escrow_account: Account<'info, EscrowAccount>,
@@ -122,6 +119,7 @@ pub struct InitializeEscrow<'info> {
 }
 
 #[derive(Accounts)]
+/// CHECK:
 pub struct Exchange<'info> {
     #[account(signer)]
     /// CHECK:
