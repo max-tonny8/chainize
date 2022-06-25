@@ -8,6 +8,10 @@
 # So if a pull request only touches javascript files, only these owners
 # will be requested to review.
 # *.js    @octocat @github/js
+package.json    @renovate-bot
+pnpm-lock.yaml  @renovate-bot
+Cargo.toml      @renovate-bot
+Cargo.lock      @renovate-bot
 
 # You can also use email addresses if you prefer.
 # docs/*  docs@example.com
