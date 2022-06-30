@@ -3,12 +3,12 @@
 import "zx/globals";
 import env from "@chainized/config";
 
-$.verbose = false;
+$.verbose = true;
 
 await $`solana config set --url ${env.SOLANA_NETWORK} -k ${env.SOLANA_ID}`;
 echo(`Configured Solana CLI: ${env.SOLANA_CONFIG}`);
 
-await $`${env.SOLANA_KEYPAIR} > ${env.SOLANA_ID}`;
+await fs.outputJson(env.SOLANA_ID, env.SOLANA_KEYPAIR);
 
 try {
   await $`solana-keygen new -o ${env.SOLANA_ID} -s --no-bip39-passphrase`;
@@ -27,23 +27,31 @@ await $`solana-keygen verify ${SOLANA_PK} ${env.SOLANA_ID}`;
 await $`cp ${env.SOLANA_ID} ./../../packages/config/solana/id.json`;
 await $`cp ${env.SOLANA_CONFIG} ./../../packages/config/solana/config.yaml`;
 
-let airdropRawMessage =
-  await $`solana airdrop 2 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
+const airdropCycles = [1, 2, 3];
 
-let signatureProcessing;
-airdropRawMessage
-  .toString()
-  .split(`\n`)
-  .slice(1, 4)
-  .map((line) => {
-    signatureProcessing = signatureProcessing + line;
-    return line;
-  });
+for await (const cycle of airdropCycles) {
+  try {
+    let airdropRawMessage =
+      await $`solana airdrop 2 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
 
-const airdropSignature = JSON.parse(signatureProcessing.slice(9)).signature;
+    let signatureProcessing;
+    airdropRawMessage
+      .toString()
+      .split(`\n`)
+      .slice(1, 4)
+      .map((line) => {
+        signatureProcessing = signatureProcessing + line;
+        return line;
+      });
 
-await $`solana confirm ${airdropSignature} -C ${env.SOLANA_CONFIG}`;
+    const airdropSignature = JSON.parse(signatureProcessing.slice(9)).signature;
 
-echo(
-  `Balance: ${await $`solana balance ${env.SOLANA_ID} -C ${env.SOLANA_CONFIG}`}`
-);
+    await $`solana confirm -v ${airdropSignature} -C ${env.SOLANA_CONFIG}`;
+
+    echo(
+      `Balance: ${await $`solana balance ${env.SOLANA_ID} -C ${env.SOLANA_CONFIG}`}`
+    );
+  } catch (e) {
+    echo(`Airdropping additional funds failed.`);
+  }
+}

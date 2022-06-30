@@ -5,23 +5,27 @@ import env from "@chainized/config";
 
 $.verbose = false;
 
-let airdropRawMessage =
-  await $`solana airdrop 2 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
+const airdropCycles = [1, 2, 3];
 
-let signatureProcessing;
-airdropRawMessage
-  .toString()
-  .split(`\n`)
-  .slice(1, 4)
-  .map((line) => {
-    signatureProcessing = signatureProcessing + line;
-    return line;
-  });
+for await (const cycle of airdropCycles) {
+  let airdropRawMessage =
+    await $`solana airdrop 2 --skip-seed-phrase-validation -C ${env.SOLANA_CONFIG} --output json`;
 
-const airdropSignature = JSON.parse(signatureProcessing.slice(9)).signature;
+  let signatureProcessing;
+  airdropRawMessage
+    .toString()
+    .split(`\n`)
+    .slice(1, 4)
+    .map((line) => {
+      signatureProcessing = signatureProcessing + line;
+      return line;
+    });
 
-await $`solana confirm -v ${airdropSignature} -C ${env.SOLANA_CONFIG}`;
+  const airdropSignature = JSON.parse(signatureProcessing.slice(9)).signature;
 
-echo(
-  `Balance: ${await $`solana balance ${env.SOLANA_ID} -C ${env.SOLANA_CONFIG}`}`
-);
+  await $`solana confirm -v ${airdropSignature} -C ${env.SOLANA_CONFIG}`;
+
+  echo(
+    `Balance: ${await $`solana balance ${env.SOLANA_ID} -C ${env.SOLANA_CONFIG}`}`
+  );
+}

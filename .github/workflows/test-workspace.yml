@@ -3,31 +3,39 @@ name: workspace-test
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 env:
   SOLANA_VERSION: "1.8.10"
   ANCHOR_VERSION: "0.24.0"
   RUST_TOOLCHAIN: nightly-2021-12-23
   CARGO_TERM_COLOR: always
+  # EVM_ADDRESS: ${{secrets.EVM_ADDRESS}}
+  # EVM_NETWORK: ${{secrets.EVM_NETWORK}}
+  # EVM_PRIVATE_KEY: ${{secrets.EVM_PRIVATE_KEY}}
+  # SOLANA_NETWORK: localhost
 
 jobs:
-  deploy:
+  test-workspace:
     runs-on: ubuntu-latest
     container: projectserum/build:v0.24.2
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use node@18.x
+      - name: Use node@16.x
         uses: actions/setup-node@v3.3.0
         with:
-          node-version: 18.x
+          node-version: 16.x
+
+      - run: corepack enable
 
       - uses: pnpm/action-setup@v2.2.2
         with:
           version: 7.3.0
           run_install: false
 
-      - run: corepack enable
+      # - run: corepack enable
       - name: List rustup toolchains
         run: rustup toolchain list
       - name: Set default toolchain
@@ -41,18 +49,18 @@ jobs:
       - name: Check solana config
         run: solana config get
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      # - name: Get pnpm store directory
+      #   id: pnpm-cache
+      #   run: |
+      #     echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+      # - uses: actions/cache@v3
+      #   name: Setup pnpm cache
+      #   with:
+      #     path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+      #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
