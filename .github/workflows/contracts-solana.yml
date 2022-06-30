@@ -51,5 +51,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Test project
-        run: cd contracts/SPL && pnpm run test
+      - name: Build solana projects
+        run: cd contracts/SPL && pnpm run build
