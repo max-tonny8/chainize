@@ -1,4 +1,4 @@
-name: workspace-test
+name: solana-workspace
 
 on:
   push:
@@ -35,7 +35,6 @@ jobs:
           version: 7.3.0
           run_install: false
 
-      # - run: corepack enable
       - name: List rustup toolchains
         run: rustup toolchain list
       - name: Set default toolchain
@@ -43,28 +42,8 @@ jobs:
       - name: List rustup toolchains
         run: rustup toolchain list
 
-      # - name: Generate new keygen
-      #   run: solana-keygen new
-      # - name: Set solana target cluster to local
-      #   run: solana config set --url localhost
-      # - name: Check solana config
-      #   run: solana config get
-
-      # - name: Get pnpm store directory
-      #   id: pnpm-cache
-      #   run: |
-      #     echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      # - uses: actions/cache@v3
-      #   name: Setup pnpm cache
-      #   with:
-      #     path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-      #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pnpm-store-
-
       - name: Install dependencies
         run: pnpm install
 
       - name: Test project
-        run: pnpm run test
+        run: cd contracts/SPL && pnpm run test
