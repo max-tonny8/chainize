@@ -13,17 +13,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@ava/typescript": "^3.0.1",
+    "@ava/typescript": "3.0.1",
     "@chainized/eslint-config-node": "workspace:*",
     "@chainized/tsconfig": "workspace:*",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.198",
-    "ava": "^4.3.0",
-    "c8": "^7.11.3",
-    "nodemon": "^2.0.16",
-    "pm2": "^5.2.0",
-    "regenerator-runtime": "^0.13.9",
-    "sinon": "^14.0.0"
+    "@swc/cli": "0.1.57",
+    "@swc/core": "1.2.207",
+    "ava": "4.3.0",
+    "c8": "7.11.3",
+    "nodemon": "2.0.18",
+    "pm2": "5.2.0",
+    "regenerator-runtime": "0.13.9",
+    "sinon": "14.0.0"
   },
   "dependencies": {
     "@chainized/config": "workspace:^1.0.0"
