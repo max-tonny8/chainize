@@ -42,12 +42,13 @@ jobs:
         run: rustup default stable
       - name: List rustup toolchains
         run: rustup toolchain list
-      - name: Generate new keygen
-        run: solana-keygen new
-      - name: Set solana target cluster to local
-        run: solana config set --url localhost
-      - name: Check solana config
-        run: solana config get
+
+      # - name: Generate new keygen
+      #   run: solana-keygen new
+      # - name: Set solana target cluster to local
+      #   run: solana config set --url localhost
+      # - name: Check solana config
+      #   run: solana config get
 
       # - name: Get pnpm store directory
       #   id: pnpm-cache
