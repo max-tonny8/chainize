@@ -1,4 +1,4 @@
-name: solana-workspace
+name: general-workspace
 
 on:
   push:
@@ -44,6 +44,3 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Test project
-        run: cd contracts/SPL && pnpm run test

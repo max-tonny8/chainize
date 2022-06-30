@@ -1,0 +1,55 @@
+name: solana-workspace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - contracts/SPL/**
+      - .github/workflows/contracts-solana.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - contracts/SPL/**
+      - .github/workflows/contracts-solana.yml
+
+env:
+  SOLANA_VERSION: "1.8.10"
+  ANCHOR_VERSION: "0.24.0"
+  RUST_TOOLCHAIN: nightly-2021-12-23
+  CARGO_TERM_COLOR: always
+  # EVM_ADDRESS: ${{secrets.EVM_ADDRESS}}
+  # EVM_NETWORK: ${{secrets.EVM_NETWORK}}
+  # EVM_PRIVATE_KEY: ${{secrets.EVM_PRIVATE_KEY}}
+  # SOLANA_NETWORK: localhost
+
+jobs:
+  test-workspace:
+    runs-on: ubuntu-latest
+    container: projectserum/build:v0.24.2
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use node@16.x
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: 16.x
+
+      - run: corepack enable
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.3.0
+          run_install: false
+
+      - name: List rustup toolchains
+        run: rustup toolchain list
+      - name: Set default toolchain
+        run: rustup default stable
+      - name: List rustup toolchains
+        run: rustup toolchain list
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test project
+        run: cd contracts/SPL && pnpm run test
