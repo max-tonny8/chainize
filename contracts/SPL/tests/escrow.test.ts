@@ -5,7 +5,7 @@ import { IdlAccounts, SplToken } from "@project-serum/anchor";
 import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { Keypair, PublicKey, Transaction } from "@solana/web3.js";
 
-type EscrowAccount = IdlAccounts<Escrow>['escrowAccount']
+type EscrowAccount = IdlAccounts<Escrow>["escrowAccount"];
 
 const test = undefinedtest as TestFn<{
   provider: anchor.AnchorProvider;
@@ -13,20 +13,20 @@ const test = undefinedtest as TestFn<{
   tokenA: SplToken;
   tokenB: SplToken;
   // Initalizer Account for Escrow
-  initializerTokenAccountA: PublicKey
-  initializerTokenAccountB: PublicKey
+  initializerTokenAccountA: PublicKey;
+  initializerTokenAccountB: PublicKey;
   // Taker Account for Escrow
-  takerTokenAccountA: PublicKey
-  takerTokenAccountB: PublicKey
+  takerTokenAccountA: PublicKey;
+  takerTokenAccountB: PublicKey;
   // PDA
-  pda: PublicKey
+  pda: PublicKey;
   // Amounts of Tokens
-  takerAmount: number
-  initalizerAmount: number
+  takerAmount: number;
+  initalizerAmount: number;
   // Keypairs
-  escrowKeypair: Keypair
-  payerKeypair: Keypair
-  mintAuthority: Keypair
+  escrowKeypair: Keypair;
+  payerKeypair: Keypair;
+  mintAuthority: Keypair;
 }>;
 
 test.before(async (t) => {
@@ -39,16 +39,15 @@ test.before(async (t) => {
 
   // DEPRECATED: Research about proper method should be done
   await t.context.provider.connection.confirmTransaction(
-    await t.context.provider.connection.requestAirdrop(t.context.payerKeypair.publicKey, 10000000000), 'confirmed'
+    await t.context.provider.connection.requestAirdrop(
+      t.context.payerKeypair.publicKey,
+      10000000000
+    ),
+    "confirmed"
   );
-
 });
 
 test.todo("should initizalize program state");
 test.todo("should intialize escrow");
 test.todo("should exchange escrow state");
 test.todo("should initialize and cancel escrow");
-
-test("should initizalize program state", async t => {
-
-})

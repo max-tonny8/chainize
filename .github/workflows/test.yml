@@ -1,0 +1,61 @@
+name: workspace-test
+
+on:
+  push:
+    branches: [main]
+
+env:
+  SOLANA_VERSION: "1.8.10"
+  ANCHOR_VERSION: "0.24.0"
+  RUST_TOOLCHAIN: nightly-2021-12-23
+  CARGO_TERM_COLOR: always
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: projectserum/build:v0.24.2
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use node@18.x
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: 18.x
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.3.0
+          run_install: false
+
+      - run: corepack enable
+      - name: List rustup toolchains
+        run: rustup toolchain list
+      - name: Set default toolchain
+        run: rustup default stable
+      - name: List rustup toolchains
+        run: rustup toolchain list
+      - name: Generate new keygen
+        run: solana-keygen new
+      - name: Set solana target cluster to local
+        run: solana config set --url localhost
+      - name: Check solana config
+        run: solana config get
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test project
+        run: pnpm run test
