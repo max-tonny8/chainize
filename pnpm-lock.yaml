@@ -142,7 +142,7 @@ importers:
       ts-node: 10.8.2
       tsup: 6.1.3
       typescript: 4.7.4
-      zx: 7.0.4
+      zx: 7.0.7
     devDependencies:
       '@ava/typescript': 3.0.1
       '@chainized/config': link:../../packages/config
@@ -159,7 +159,7 @@ importers:
       ts-node: 10.8.2_rf36vhyq5bw7w55ijgrvnfasgy
       tsup: 6.1.3_bn3y5sn7aa6hsplivwol7ie4em
       typescript: 4.7.4
-      zx: 7.0.4
+      zx: 7.0.7
 
   contracts/solana-escrow:
     specifiers:
@@ -178,7 +178,7 @@ importers:
       ts-node: 10.8.2
       tsup: 6.1.3
       typescript: 4.7.4
-      zx: 7.0.4
+      zx: 7.0.7
     devDependencies:
       '@ava/typescript': 3.0.1
       '@chainized/config': link:../../packages/config
@@ -195,7 +195,7 @@ importers:
       ts-node: 10.8.2_rf36vhyq5bw7w55ijgrvnfasgy
       tsup: 6.1.3_bn3y5sn7aa6hsplivwol7ie4em
       typescript: 4.7.4
-      zx: 7.0.4
+      zx: 7.0.7
 
   packages/config:
     specifiers:
@@ -14289,8 +14289,8 @@ packages:
     resolution: {integrity: sha512-4oKP5zvG6GGbMlqBkI5FESOAweldEhSOZ6LI6cG+JzUT7ofj1ZOC0PJudpQOpT1iqOFpYYtX5Pw0+o403y4bcg==}
     dev: true
 
-  /zx/7.0.4:
-    resolution: {integrity: sha512-Z0uybYYLtL8ODx9ZOU88EKi6OLZ9ZTDRXX5igtcAsePUIseOWdACSaMxPjzgp0hqWkx0sZz/Lxs8bBSAHOsnNA==}
+  /zx/7.0.7:
+    resolution: {integrity: sha512-cWF5cWqqrTVxgEPmQ8w/LvUXOK3rJTdgC+Tt1nz113+YncNIO0X6UXgCY72UfE8Az/lwOubbEJARXpQ+7RiM9g==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     dependencies:
