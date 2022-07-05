@@ -22,7 +22,7 @@
     "@nomiclabs/hardhat-waffle": "2.0.3",
     "@openzeppelin/hardhat-upgrades": "1.19.0",
     "@thirdweb-dev/contracts": "2.4.3",
-    "@thirdweb-dev/sdk": "2.3.22",
+    "@thirdweb-dev/sdk": "2.3.23",
     "@typechain/ethers-v5": "7.2.0",
     "@typechain/hardhat": "2.3.1",
     "@types/chai": "4.3.1",

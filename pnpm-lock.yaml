@@ -70,7 +70,7 @@ importers:
       '@nomiclabs/hardhat-waffle': 2.0.3
       '@openzeppelin/hardhat-upgrades': 1.19.0
       '@thirdweb-dev/contracts': 2.4.3
-      '@thirdweb-dev/sdk': 2.3.22
+      '@thirdweb-dev/sdk': 2.3.23
       '@typechain/ethers-v5': 7.2.0
       '@typechain/hardhat': 2.3.1
       '@types/chai': 4.3.1
@@ -102,7 +102,7 @@ importers:
       '@nomiclabs/hardhat-waffle': 2.0.3_zadjl4bpml2gbpjru46ayelpfu
       '@openzeppelin/hardhat-upgrades': 1.19.0_pynpa2wptwkj3g6xnuduudxc6a
       '@thirdweb-dev/contracts': 2.4.3
-      '@thirdweb-dev/sdk': 2.3.22_ethers@5.6.9
+      '@thirdweb-dev/sdk': 2.3.23_ethers@5.6.9
       '@typechain/ethers-v5': 7.2.0_4gvotyj2e6ld5vbfjypnxpijka
       '@typechain/hardhat': 2.3.1_mnmps3qcsdwtactywr24f4axw4
       '@types/chai': 4.3.1
@@ -1609,20 +1609,16 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@thirdweb-dev/contracts/2.4.1:
-    resolution: {integrity: sha512-It1lEQ55Wpad+XlzymlyFeG/j0mBy7qMbACf0615PVoqV1bvQbV1PCaXr4v0toNsDZRemwInINIGUGc27dDT5w==}
-    dev: true
-
   /@thirdweb-dev/contracts/2.4.3:
     resolution: {integrity: sha512-4FdREGMxyfxBR1AJkMoeQooCwk1GKfGyvZJXvC/fVshrvxU+MbeyPcbDrCqjreJcJjsFPz1mV+mnYeRZrS6aeg==}
     dev: true
 
-  /@thirdweb-dev/sdk/2.3.22_ethers@5.6.9:
-    resolution: {integrity: sha512-QutZN/n2PCJtwlzbnCh+rV+PzE5qMWa6rqO0apUtcaz9ifEk1eKT18TgfkW7nanpErnbtIO7rsfvP/5zoAKdvA==}
+  /@thirdweb-dev/sdk/2.3.23_ethers@5.6.9:
+    resolution: {integrity: sha512-UdU8U6DYvQLcBoyENxnrqaM/7o4TUW2Xr8apAFolbMN/1isq2WoLfSpmQilO9t7rHOTwTQsweIP+ZXjVYMm5kQ==}
     peerDependencies:
       ethers: ^5
     dependencies:
-      '@thirdweb-dev/contracts': 2.4.1
+      '@thirdweb-dev/contracts': 2.4.3
       '@web-std/file': 3.0.2
       cbor: 8.1.0
       cross-fetch: 3.1.5
