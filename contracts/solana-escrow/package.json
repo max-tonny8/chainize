@@ -1,22 +1,17 @@
 {
-  "name": "@chainized/spl",
+  "name": "solana-escrow",
   "version": "1.0.0",
   "description": "",
   "exports": {
-    "puppet": {
-      "types": "./dist/puppet.d.ts",
-      "require": "./dist/puppet.js",
-      "import": "./dist/puppet.mjs"
-    },
-    "puppet-master": {
-      "types": "./dist/puppet_master.d.ts",
-      "require": "./dist/puppet_master.js",
-      "import": "./dist/pupuppet_masterppet.mjs"
+    ".": {
+      "types": "./dist/escrow.d.ts",
+      "require": "./dist/escrow.js",
+      "import": "./dist/escrow.mjs"
     }
   },
-  "main": "./dist/**.js",
-  "types": "./dist/**.d.ts",
-  "module": "./dist/**.mjs",
+  "main": "./dist/escrow.js",
+  "types": "./dist/escrow.d.ts",
+  "module": "./dist/escrow.mjs",
   "scripts": {
     "build:src": "anchor build",
     "build:lib": "tsup target/types/*.ts --format cjs,esm --dts --clean",

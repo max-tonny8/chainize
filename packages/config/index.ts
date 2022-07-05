@@ -29,7 +29,7 @@ const env = cleanEnv(process.env, {
     default: `${process.env["HOME"]}/.config/solana/id.json`,
   }),
   SOLANA_NETWORK: str({
-    default: `localhost`,
+    default: `devnet`,
   }),
   SOLANA_CONFIG: str({
     default: `${process.env["HOME"]}/.config/solana/cli/config.yml`,
