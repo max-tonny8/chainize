@@ -18,7 +18,6 @@
     "build": "pnpm run build:src && pnpm run build:lib",
     "test": "anchor test",
     "deploy": "zx scripts/deploy.mjs",
-    "postinstall": "zx scripts/postinstall.mjs",
     "airdrop": "zx scripts/airdrop.mjs"
   },
   "keywords": [],
