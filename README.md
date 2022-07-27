@@ -36,3 +36,5 @@ $ pnpm run build
 ```js
 private youDoNot(contribute: any)
 ```
+
+[![wakatime](https://wakatime.com/badge/user/13a02f4d-34c9-45f7-95ee-bf9d66b139fb/project/89cd4839-83ec-4cf3-aca1-1fe2d7eb5c0a.svg)](https://wakatime.com/badge/user/13a02f4d-34c9-45f7-95ee-bf9d66b139fb/project/89cd4839-83ec-4cf3-aca1-1fe2d7eb5c0a)
