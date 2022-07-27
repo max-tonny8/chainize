@@ -1,17 +1,17 @@
 {
-  "name": "solana-escrow",
+  "name": "solana-boilerplate-program",
   "version": "1.0.0",
   "description": "",
   "exports": {
     ".": {
-      "types": "./dist/escrow.d.ts",
-      "require": "./dist/escrow.js",
-      "import": "./dist/escrow.mjs"
+      "types": "./dist/sample.d.ts",
+      "require": "./dist/sample.js",
+      "import": "./dist/sample.mjs"
     }
   },
-  "main": "./dist/escrow.js",
-  "types": "./dist/escrow.d.ts",
-  "module": "./dist/escrow.mjs",
+  "main": "./dist/sample.js",
+  "types": "./dist/sample.d.ts",
+  "module": "./dist/sample.mjs",
   "scripts": {
     "build:src": "anchor build",
     "build:lib": "tsup target/types/*.ts --format cjs,esm --dts --clean",

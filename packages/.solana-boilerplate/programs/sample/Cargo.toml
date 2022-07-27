@@ -1,12 +1,12 @@
 [package]
-name = "linear-vesting"
+name = "sample"
 version = "0.1.0"
-description = "Created with Anchor"
+description = "..."
 edition = "2018"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "linear_vesting"
+name = "sample"
 
 [features]
 no-entrypoint = []

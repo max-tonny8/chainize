@@ -2,10 +2,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "conventionalCommits.scopes": ["deps"],
-  "rust-analyzer.linkedProjects": ["contracts/SPL/Cargo.toml"],
+  "rust-analyzer.linkedProjects": ["packages/.solana-boilerplate/Cargo.toml"],
   "rust-analyzer.procMacro.enable": false,
   "[rust]": {
     "editor.defaultFormatter": "dprint.dprint",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   }
 }

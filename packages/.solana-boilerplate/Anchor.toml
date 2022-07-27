@@ -8,8 +8,5 @@ url = "https://anchor.projectserum.com"
 cluster = "devnet"
 wallet = "./../config/solana/id.json"
 
-[programs.devnet]
-escrow = "GorKJzSmWPpbrwK8zT1MtdBtPn3e5ctbjJnPExYRcUSB"
-
 [scripts]
 test = "pnpm npx ava --timeout=10m"

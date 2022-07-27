@@ -2,6 +2,10 @@
 
 From multiple separated repositories for learning writing `solidity` and `rust` (`solana`) smart-contracts I've decided to merge everything into one place in monorepo structure, it's kinda more comforable to have every single package in one place and running whole project by single command - espcially when there will be `apps/api` and `apps/web` package to perform interfactions with contracts.
 
+## Packages
+
+- `packages/solana-coinflip`, functional solana contract with coinflip (tests included)
+
 ## Getting Started
 
 > I was trying to keep things as simple as it's possible.
