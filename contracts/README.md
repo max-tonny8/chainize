@@ -1,1 +1,0 @@
-# `@chainized/contracts`

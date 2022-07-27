@@ -2,18 +2,16 @@ use anchor_lang::{prelude::*, solana_program::clock};
 use anchor_spl::token::{self, Mint, SetAuthority, TokenAccount, Transfer};
 use spl_token::instruction::AuthorityType;
 pub mod error;
-use crate::{error::LinearVestingError};
+use crate::error::LinearVestingError;
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
 const VAULT_PDA_SEED: &[u8] = b"token-vault";
 const VAULT_AUTHORITY_PDA_SEED: &[u8] = b"vault-authority";
 
-
 #[program]
 pub mod linear_vesting {
     use super::*;
-
 
     pub fn initialize(
         ctx: Context<Initialize>,
@@ -22,7 +20,7 @@ pub mod linear_vesting {
         cliff_ts: i64,
         duration: i64,
         revocable: bool,
-    ) -> ProgramResult {
+    ) -> Result<()> {
         ctx.accounts.vesting_account.start_ts = start_ts;
         ctx.accounts.vesting_account.cliff_ts = cliff_ts;
         ctx.accounts.vesting_account.duration = duration;
@@ -36,10 +34,9 @@ pub mod linear_vesting {
         ctx.accounts.vesting_account.released_amount = 0;
         ctx.accounts.vesting_account.revoked = false;
 
-
         let (vault_authority, _vault_authority_bump) =
             Pubkey::find_program_address(&[VAULT_AUTHORITY_PDA_SEED], ctx.program_id);
-        
+
         token::set_authority(
             ctx.accounts.into_set_authority_context(),
             AuthorityType::AccountOwner,
@@ -54,9 +51,7 @@ pub mod linear_vesting {
         Ok(())
     }
 
-    pub fn withdraw(
-        ctx: Context<Withdraw>
-    ) -> ProgramResult {
+    pub fn withdraw(ctx: Context<Withdraw>) -> Result<()> {
         if !ctx.accounts.beneficiary.is_signer {
             return Err(ProgramError::MissingRequiredSignature);
         }
@@ -67,12 +62,20 @@ pub mod linear_vesting {
         let current_time = clock.unix_timestamp;
         let mut unreleased_token = 0;
 
-        if current_time < ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.cliff_ts {
+        if current_time
+            < ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.cliff_ts
+        {
             unreleased_token = 0;
-        } else if current_time >= ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.duration || ctx.accounts.vesting_account.revoked {
+        } else if current_time
+            >= ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.duration
+            || ctx.accounts.vesting_account.revoked
+        {
             unreleased_token = total_balance - ctx.accounts.vesting_account.released_amount;
         } else {
-            unreleased_token = ((total_balance * (current_time - ctx.accounts.vesting_account.start_ts) as u64) / ctx.accounts.vesting_account.duration as u64) - ctx.accounts.vesting_account.released_amount;
+            unreleased_token = ((total_balance
+                * (current_time - ctx.accounts.vesting_account.start_ts) as u64)
+                / ctx.accounts.vesting_account.duration as u64)
+                - ctx.accounts.vesting_account.released_amount;
         }
 
         if unreleased_token <= 0 {
@@ -84,18 +87,18 @@ pub mod linear_vesting {
         let (_vault_authority, vault_authority_bump) =
             Pubkey::find_program_address(&[VAULT_AUTHORITY_PDA_SEED], ctx.program_id);
         let authority_seeds = &[&VAULT_AUTHORITY_PDA_SEED[..], &[vault_authority_bump]];
-        
+
         token::transfer(
-            ctx.accounts.into_transfer_to_beneficiary_context().with_signer(&[&authority_seeds[..]]),
+            ctx.accounts
+                .into_transfer_to_beneficiary_context()
+                .with_signer(&[&authority_seeds[..]]),
             unreleased_token,
         )?;
 
         Ok(())
     }
 
-    pub fn revoke(
-        ctx: Context<Revoke>
-    ) -> ProgramResult {
+    pub fn revoke(ctx: Context<Revoke>) -> Result<()> {
         if !ctx.accounts.owner.is_signer {
             return Err(ProgramError::MissingRequiredSignature);
         }
@@ -115,12 +118,20 @@ pub mod linear_vesting {
         let current_time = clock.unix_timestamp;
         let mut unreleased_token = 0;
 
-        if current_time < ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.cliff_ts {
+        if current_time
+            < ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.cliff_ts
+        {
             unreleased_token = 0;
-        } else if current_time >= ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.duration || ctx.accounts.vesting_account.revoked {
+        } else if current_time
+            >= ctx.accounts.vesting_account.start_ts + ctx.accounts.vesting_account.duration
+            || ctx.accounts.vesting_account.revoked
+        {
             unreleased_token = total_balance - ctx.accounts.vesting_account.released_amount;
         } else {
-            unreleased_token = ((total_balance * (current_time - ctx.accounts.vesting_account.start_ts) as u64) / ctx.accounts.vesting_account.duration as u64) - ctx.accounts.vesting_account.released_amount;
+            unreleased_token = ((total_balance
+                * (current_time - ctx.accounts.vesting_account.start_ts) as u64)
+                / ctx.accounts.vesting_account.duration as u64)
+                - ctx.accounts.vesting_account.released_amount;
         }
 
         let refund = current_balance - unreleased_token;
@@ -129,15 +140,16 @@ pub mod linear_vesting {
         let (_vault_authority, vault_authority_bump) =
             Pubkey::find_program_address(&[VAULT_AUTHORITY_PDA_SEED], ctx.program_id);
         let authority_seeds = &[&VAULT_AUTHORITY_PDA_SEED[..], &[vault_authority_bump]];
-        
+
         token::transfer(
-            ctx.accounts.into_transfer_to_owner_context().with_signer(&[&authority_seeds[..]]),
+            ctx.accounts
+                .into_transfer_to_owner_context()
+                .with_signer(&[&authority_seeds[..]]),
             refund,
         )?;
 
         Ok(())
     }
-
 }
 
 #[derive(Accounts)]
@@ -232,7 +244,7 @@ pub struct VestingAccount {
     /// Amount that has been released
     pub released_amount: u64,
     /// The account is revoked
-    pub revoked: bool
+    pub revoked: bool,
 }
 
 impl<'info> Initialize<'info> {
@@ -255,7 +267,9 @@ impl<'info> Initialize<'info> {
 }
 
 impl<'info> Withdraw<'info> {
-    fn into_transfer_to_beneficiary_context(&self) -> CpiContext<'_, '_, '_, 'info, Transfer<'info>> {
+    fn into_transfer_to_beneficiary_context(
+        &self,
+    ) -> CpiContext<'_, '_, '_, 'info, Transfer<'info>> {
         let cpi_accounts = Transfer {
             from: self.vault_account.to_account_info().clone(),
             to: self.beneficiary_ata.to_account_info().clone(),
