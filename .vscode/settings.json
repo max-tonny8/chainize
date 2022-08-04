@@ -7,5 +7,6 @@
   "[rust]": {
     "editor.defaultFormatter": "dprint.dprint",
     "editor.formatOnSave": true
-  }
+  },
+  "cSpell.words": ["chainized", "Keypair", "keypairs"]
 }
