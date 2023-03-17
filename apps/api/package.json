@@ -28,6 +28,6 @@
   "dependencies": {
     "@chainized/config": "workspace:^1.0.0",
     "@project-serum/anchor": "0.25.0",
-    "@solana/spl-token": "0.2.0"
+    "@solana/spl-token": "0.3.7"
   }
 }
