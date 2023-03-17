@@ -206,7 +206,7 @@ importers:
       ethereum-waffle: 3.4.4
       ethers: 5.6.9
       hardhat: 2.9.9
-      hardhat-gas-reporter: 1.0.8
+      hardhat-gas-reporter: 1.0.9
       prettier: 2.7.1
       prettier-plugin-solidity: 1.0.0-beta.19
       solhint: 3.3.7
@@ -238,7 +238,7 @@ importers:
       ethereum-waffle: 3.4.4_typescript@4.7.4
       ethers: 5.6.9
       hardhat: 2.9.9_bn3y5sn7aa6hsplivwol7ie4em
-      hardhat-gas-reporter: 1.0.8_hardhat@2.9.9
+      hardhat-gas-reporter: 1.0.9_hardhat@2.9.9
       prettier: 2.7.1
       prettier-plugin-solidity: 1.0.0-beta.19_prettier@2.7.1
       solhint: 3.3.7
@@ -10454,8 +10454,8 @@ packages:
       har-schema: 2.0.0
     dev: true
 
-  /hardhat-gas-reporter/1.0.8_hardhat@2.9.9:
-    resolution: {integrity: sha512-1G5thPnnhcwLHsFnl759f2tgElvuwdkzxlI65fC9PwxYMEe9cmjkVAAWTf3/3y8uP6ZSPiUiOW8PgZnykmZe0g==}
+  /hardhat-gas-reporter/1.0.9_hardhat@2.9.9:
+    resolution: {integrity: sha512-INN26G3EW43adGKBNzYWOlI3+rlLnasXTwW79YNnUhXPDa+yHESgt639dJEs37gCjhkbNKcRRJnomXEuMFBXJg==}
     peerDependencies:
       hardhat: ^2.0.2
     dependencies:
