@@ -189,7 +189,7 @@ importers:
       '@nomiclabs/hardhat-ethers': 2.0.6
       '@nomiclabs/hardhat-etherscan': 3.1.7
       '@nomiclabs/hardhat-solhint': 2.0.1
-      '@nomiclabs/hardhat-waffle': 2.0.3
+      '@nomiclabs/hardhat-waffle': 2.0.5
       '@openzeppelin/hardhat-upgrades': 1.22.1
       '@thirdweb-dev/contracts': 2.4.3
       '@thirdweb-dev/sdk': 2.3.23
@@ -221,7 +221,7 @@ importers:
       '@nomiclabs/hardhat-ethers': 2.0.6_ethers@5.6.9+hardhat@2.9.9
       '@nomiclabs/hardhat-etherscan': 3.1.7_hardhat@2.9.9
       '@nomiclabs/hardhat-solhint': 2.0.1_hardhat@2.9.9
-      '@nomiclabs/hardhat-waffle': 2.0.3_zadjl4bpml2gbpjru46ayelpfu
+      '@nomiclabs/hardhat-waffle': 2.0.5_zadjl4bpml2gbpjru46ayelpfu
       '@openzeppelin/hardhat-upgrades': 1.22.1_kb3jjzic2ruaird35zj2m2k5vm
       '@thirdweb-dev/contracts': 2.4.3
       '@thirdweb-dev/sdk': 2.3.23_ethers@5.6.9
@@ -2910,17 +2910,15 @@ packages:
       - supports-color
     dev: true
 
-  /@nomiclabs/hardhat-waffle/2.0.3_zadjl4bpml2gbpjru46ayelpfu:
-    resolution: {integrity: sha512-049PHSnI1CZq6+XTbrMbMv5NaL7cednTfPenx02k3cEh8wBMLa6ys++dBETJa6JjfwgA9nBhhHQ173LJv6k2Pg==}
+  /@nomiclabs/hardhat-waffle/2.0.5_zadjl4bpml2gbpjru46ayelpfu:
+    resolution: {integrity: sha512-U1RH9OQ1mWYQfb+moX5aTgGjpVVlOcpiFI47wwnaGG4kLhcTy90cNiapoqZenxcRAITVbr0/+QSduINL5EsUIQ==}
     peerDependencies:
       '@nomiclabs/hardhat-ethers': ^2.0.0
-      ethereum-waffle: ^3.2.0
+      ethereum-waffle: '*'
       ethers: ^5.0.0
       hardhat: ^2.0.0
     dependencies:
       '@nomiclabs/hardhat-ethers': 2.0.6_ethers@5.6.9+hardhat@2.9.9
-      '@types/sinon-chai': 3.2.8
-      '@types/web3': 1.0.19
       ethereum-waffle: 3.4.4_typescript@4.7.4
       ethers: 5.6.9
       hardhat: 2.9.9_bn3y5sn7aa6hsplivwol7ie4em
@@ -4201,34 +4199,6 @@ packages:
     resolution: {integrity: sha512-Da66lEIFeIz9ltsdMZcpQvmrmmoqrfju8pm1BH8WbYjZSwUgCwXLb9C+9XYogwBITnbsSaMdVPb2ekf7TV+03w==}
     dependencies:
       '@types/node': 12.20.55
-    dev: true
-
-  /@types/sinon-chai/3.2.8:
-    resolution: {integrity: sha512-d4ImIQbT/rKMG8+AXpmcan5T2/PNeSjrYhvkwet6z0p8kzYtfgA32xzOBlbU0yqJfq+/0Ml805iFoODO0LP5/g==}
-    dependencies:
-      '@types/chai': 4.3.1
-      '@types/sinon': 10.0.13
-    dev: true
-
-  /@types/sinon/10.0.13:
-    resolution: {integrity: sha512-UVjDqJblVNQYvVNUsj0PuYYw0ELRmgt1Nt5Vk0pT5f16ROGfcKJY8o1HVuMOJOpD727RrGB9EGvoaTQE5tgxZQ==}
-    dependencies:
-      '@types/sinonjs__fake-timers': 8.1.2
-    dev: true
-
-  /@types/sinonjs__fake-timers/8.1.2:
-    resolution: {integrity: sha512-9GcLXF0/v3t80caGs5p2rRfkB+a8VBGLJZVih6CNFkx8IZ994wiKKLSRs9nuFwk1HevWs/1mnUmkApGrSGsShA==}
-    dev: true
-
-  /@types/underscore/1.11.4:
-    resolution: {integrity: sha512-uO4CD2ELOjw8tasUrAhvnn2W4A0ZECOvMjCivJr4gA9pGgjv+qxKWY9GLTMVEK8ej85BxQOocUyE7hImmSQYcg==}
-    dev: true
-
-  /@types/web3/1.0.19:
-    resolution: {integrity: sha512-fhZ9DyvDYDwHZUp5/STa9XW2re0E8GxoioYJ4pEUZ13YHpApSagixj7IAdoYH5uAK+UalGq6Ml8LYzmgRA/q+A==}
-    dependencies:
-      '@types/bn.js': 5.1.0
-      '@types/underscore': 1.11.4
     dev: true
 
   /@types/ws/7.4.7:
