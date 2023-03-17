@@ -187,7 +187,7 @@ importers:
       '@chainized/eslint-config-hardhat': workspace:*
       '@chainized/tsconfig': workspace:^1.0.0
       '@nomiclabs/hardhat-ethers': 2.0.6
-      '@nomiclabs/hardhat-etherscan': 3.1.0
+      '@nomiclabs/hardhat-etherscan': 3.1.7
       '@nomiclabs/hardhat-solhint': 2.0.1
       '@nomiclabs/hardhat-waffle': 2.0.3
       '@openzeppelin/hardhat-upgrades': 1.22.1
@@ -219,10 +219,10 @@ importers:
       '@chainized/eslint-config-hardhat': link:../eslint-config-hardhat
       '@chainized/tsconfig': link:../tsconfig
       '@nomiclabs/hardhat-ethers': 2.0.6_ethers@5.6.9+hardhat@2.9.9
-      '@nomiclabs/hardhat-etherscan': 3.1.0_hardhat@2.9.9
+      '@nomiclabs/hardhat-etherscan': 3.1.7_hardhat@2.9.9
       '@nomiclabs/hardhat-solhint': 2.0.1_hardhat@2.9.9
       '@nomiclabs/hardhat-waffle': 2.0.3_zadjl4bpml2gbpjru46ayelpfu
-      '@openzeppelin/hardhat-upgrades': 1.22.1_d2vwxpmhmufksiqxynvxw6puda
+      '@openzeppelin/hardhat-upgrades': 1.22.1_kb3jjzic2ruaird35zj2m2k5vm
       '@thirdweb-dev/contracts': 2.4.3
       '@thirdweb-dev/sdk': 2.3.23_ethers@5.6.9
       '@typechain/ethers-v5': 7.2.0_4gvotyj2e6ld5vbfjypnxpijka
@@ -2879,14 +2879,14 @@ packages:
       hardhat: 2.9.9_bn3y5sn7aa6hsplivwol7ie4em
     dev: true
 
-  /@nomiclabs/hardhat-etherscan/3.1.0_hardhat@2.9.9:
-    resolution: {integrity: sha512-JroYgfN1AlYFkQTQ3nRwFi4o8NtZF7K/qFR2dxDUgHbCtIagkUseca9L4E/D2ScUm4XT40+8PbCdqZi+XmHyQA==}
+  /@nomiclabs/hardhat-etherscan/3.1.7_hardhat@2.9.9:
+    resolution: {integrity: sha512-tZ3TvSgpvsQ6B6OGmo1/Au6u8BrAkvs1mIC/eURA3xgIfznUZBhmpne8hv7BXUzw9xNL3fXdpOYgOQlVMTcoHQ==}
     peerDependencies:
       hardhat: ^2.0.4
     dependencies:
       '@ethersproject/abi': 5.6.4
       '@ethersproject/address': 5.6.1
-      cbor: 5.2.0
+      cbor: 8.1.0
       chalk: 2.4.2
       debug: 4.3.4
       fs-extra: 7.0.1
@@ -2894,7 +2894,7 @@ packages:
       lodash: 4.17.21
       semver: 6.3.0
       table: 6.8.0
-      undici: 5.8.1
+      undici: 5.21.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2956,7 +2956,7 @@ packages:
       uuid: 3.4.0
     dev: true
 
-  /@openzeppelin/hardhat-upgrades/1.22.1_d2vwxpmhmufksiqxynvxw6puda:
+  /@openzeppelin/hardhat-upgrades/1.22.1_kb3jjzic2ruaird35zj2m2k5vm:
     resolution: {integrity: sha512-MdoitCTLl4zwMU8MeE/bCj+7JMWBEvd38XqJkw36PkJrXlbv6FedDVCPoumMAhpmtymm0nTwTYYklYG+L6WiiQ==}
     hasBin: true
     peerDependencies:
@@ -2970,7 +2970,7 @@ packages:
         optional: true
     dependencies:
       '@nomiclabs/hardhat-ethers': 2.0.6_ethers@5.6.9+hardhat@2.9.9
-      '@nomiclabs/hardhat-etherscan': 3.1.0_hardhat@2.9.9
+      '@nomiclabs/hardhat-etherscan': 3.1.7_hardhat@2.9.9
       '@openzeppelin/upgrades-core': 1.24.1
       chalk: 4.1.2
       debug: 4.3.4
@@ -6183,6 +6183,13 @@ packages:
       load-tsconfig: 0.2.3
     dev: true
 
+  /busboy/1.6.0:
+    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
+    engines: {node: '>=10.16.0'}
+    dependencies:
+      streamsearch: 1.1.0
+    dev: true
+
   /bytes/3.0.0:
     resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==}
     engines: {node: '>= 0.8'}
@@ -6313,14 +6320,6 @@ packages:
 
   /caseless/0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
-    dev: true
-
-  /cbor/5.2.0:
-    resolution: {integrity: sha512-5IMhi9e1QU76ppa5/ajP1BmMWZ2FHkhAhjeVKQ/EFCgYSEaeVaoGtL7cxJskf9oCCk+XjzaIdc3IuU/dbA/o2A==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      bignumber.js: 9.0.2
-      nofilter: 1.0.4
     dev: true
 
   /cbor/8.1.0:
@@ -13100,11 +13099,6 @@ packages:
       undefsafe: 2.0.5
     dev: true
 
-  /nofilter/1.0.4:
-    resolution: {integrity: sha512-N8lidFp+fCz+TD51+haYdbDGrcBWwuHX40F5+z0qkUjMJ5Tp+rdSuAkMJ9N9eoolDlEVTf6u5icM+cNKkKW2mA==}
-    engines: {node: '>=8'}
-    dev: true
-
   /nofilter/3.1.0:
     resolution: {integrity: sha512-l2NNj07e9afPnhAhvgVrCD/oy2Ai1yfLpuo3EpiO1jFTsB4sFz6oIfAfSZyQzVpkZQ9xS8ZS5g1jCBgq4Hwo0g==}
     engines: {node: '>=12.19'}
@@ -15827,6 +15821,11 @@ packages:
       pull-stream: 3.6.14
     dev: true
 
+  /streamsearch/1.1.0:
+    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
+    engines: {node: '>=10.0.0'}
+    dev: true
+
   /strict-uri-encode/1.1.0:
     resolution: {integrity: sha512-R3f198pcvnB+5IpnBlRkphuE9n46WyVl8I39W/ZUTZLz4nqSP/oLYUrcnJrw462Ds8he4YKMov2efsTIw1BDGQ==}
     engines: {node: '>=0.10.0'}
@@ -16958,6 +16957,13 @@ packages:
 
   /undefsafe/2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
+    dev: true
+
+  /undici/5.21.0:
+    resolution: {integrity: sha512-HOjK8l6a57b2ZGXOcUsI5NLfoTrfmbOl90ixJDl0AEFG4wgHNDQxtZy15/ZQp7HhjkpaGlp/eneMgtsu1dIlUA==}
+    engines: {node: '>=12.18'}
+    dependencies:
+      busboy: 1.6.0
     dev: true
 
   /undici/5.8.1:
