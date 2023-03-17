@@ -38,7 +38,7 @@ importers:
       c8: 7.11.3
       nodemon: 2.0.21
       pm2: 5.2.0
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
       sinon: 14.0.0
     dependencies:
       '@chainized/config': link:../../packages/config
@@ -54,7 +54,7 @@ importers:
       c8: 7.11.3
       nodemon: 2.0.21
       pm2: 5.2.0
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
       sinon: 14.0.0
 
   apps/web:
@@ -1613,14 +1613,14 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       core-js-pure: 3.24.1
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
     dev: true
 
   /@babel/runtime/7.18.9:
     resolution: {integrity: sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -14631,7 +14631,7 @@ packages:
       react-native-gradle-plugin: 0.0.7
       react-refresh: 0.4.3
       react-shallow-renderer: 16.15.0_react@18.0.0
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.11
       scheduler: 0.21.0
       stacktrace-parser: 0.1.10
       use-sync-external-store: 1.2.0_react@18.0.0
@@ -14869,8 +14869,8 @@ packages:
     resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
     dev: true
 
-  /regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
 
   /regenerator-transform/0.10.1:
     resolution: {integrity: sha512-PJepbvDbuK1xgIgnau7Y90cwaAmO/LCLMI2mPvaXq2heGMR3aWW5/BQvYrhJ8jgmQjXewXvBjzfqKcVOmhjZ6Q==}
