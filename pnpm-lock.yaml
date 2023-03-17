@@ -34,7 +34,7 @@ importers:
       '@solana/spl-token': 0.2.0
       '@swc/cli': 0.1.62
       '@swc/core': 1.3.40
-      ava: 4.3.0
+      ava: 4.3.3
       c8: 7.11.3
       nodemon: 2.0.19
       pm2: 5.2.0
@@ -50,7 +50,7 @@ importers:
       '@chainized/tsconfig': link:../../packages/tsconfig
       '@swc/cli': 0.1.62_@swc+core@1.3.40
       '@swc/core': 1.3.40
-      ava: 4.3.0_@ava+typescript@3.0.1
+      ava: 4.3.3_@ava+typescript@3.0.1
       c8: 7.11.3
       nodemon: 2.0.19
       pm2: 5.2.0
@@ -200,7 +200,7 @@ importers:
       '@types/node': 12.20.55
       '@typescript-eslint/eslint-plugin': 5.30.5
       '@typescript-eslint/parser': 5.30.5
-      ava: 4.3.0
+      ava: 4.3.3
       chai: 4.3.6
       eslint: 7.32.0
       ethereum-waffle: 3.4.4
@@ -232,7 +232,7 @@ importers:
       '@types/node': 12.20.55
       '@typescript-eslint/eslint-plugin': 5.30.5_tqdvjhskp4iqqnzfei7kl2fvsq
       '@typescript-eslint/parser': 5.30.5_hxadhbs2xogijvk7vq4t2azzbu
-      ava: 4.3.0
+      ava: 4.3.3
       chai: 4.3.6
       eslint: 7.32.0
       ethereum-waffle: 3.4.4_typescript@4.7.4
@@ -5088,8 +5088,8 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /ava/4.3.0:
-    resolution: {integrity: sha512-Ap0u8rp8wOBN6CxshgxrPSe191e8g52RWGoXeDB57ubo4fyZyStfI6OxQi/bl0yxIDEOYHhCiGwihbzlMNJw3Q==}
+  /ava/4.3.3:
+    resolution: {integrity: sha512-9Egq/d9R74ExrWohHeqUlexjDbgZJX5jA1Wq4KCTqc3wIfpGEK79zVy4rBtofJ9YKIxs4PzhJ8BgbW5PlAYe6w==}
     engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=18'}
     hasBin: true
     peerDependencies:
@@ -5147,8 +5147,8 @@ packages:
       - supports-color
     dev: true
 
-  /ava/4.3.0_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-Ap0u8rp8wOBN6CxshgxrPSe191e8g52RWGoXeDB57ubo4fyZyStfI6OxQi/bl0yxIDEOYHhCiGwihbzlMNJw3Q==}
+  /ava/4.3.3_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-9Egq/d9R74ExrWohHeqUlexjDbgZJX5jA1Wq4KCTqc3wIfpGEK79zVy4rBtofJ9YKIxs4PzhJ8BgbW5PlAYe6w==}
     engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=18'}
     hasBin: true
     peerDependencies:
@@ -18292,7 +18292,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 20.2.4
+      yargs-parser: 20.2.9
     dev: true
 
   /yargs/17.5.1:
