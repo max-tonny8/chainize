@@ -191,7 +191,7 @@ importers:
       '@nomiclabs/hardhat-solhint': 2.0.1
       '@nomiclabs/hardhat-waffle': 2.0.6
       '@openzeppelin/hardhat-upgrades': 1.24.0
-      '@thirdweb-dev/contracts': 3.5.0
+      '@thirdweb-dev/contracts': 3.5.4
       '@thirdweb-dev/sdk': 2.5.2
       '@typechain/ethers-v5': 7.2.0
       '@typechain/hardhat': 2.3.1
@@ -223,7 +223,7 @@ importers:
       '@nomiclabs/hardhat-solhint': 2.0.1_hardhat@2.14.0
       '@nomiclabs/hardhat-waffle': 2.0.6_276vzrulrsto7njsfacncjsfdy
       '@openzeppelin/hardhat-upgrades': 1.24.0_dd3hwbt7tuub5dzi3gdskdlauq
-      '@thirdweb-dev/contracts': 3.5.0
+      '@thirdweb-dev/contracts': 3.5.4
       '@thirdweb-dev/sdk': 2.5.2_ethers@5.7.2
       '@typechain/ethers-v5': 7.2.0_vecux64xekz36zggpgz5gldpmq
       '@typechain/hardhat': 2.3.1_t4ifspvwmzrkqgwnrko4v5zkle
@@ -4426,8 +4426,8 @@ packages:
     resolution: {integrity: sha512-BURfuFYZhJOmoycDwo8iaKUi+rdjt9vRGFd0vquqNjL2vQdI7dXqdbuJuOepIwGld5gvRNM+WlnVQ8EZgQIjqg==}
     dev: true
 
-  /@thirdweb-dev/contracts/3.5.0:
-    resolution: {integrity: sha512-EvIojvITRtmGwbW15tr+EW1PvoCVo59CPxL/cx808KSum1Us6F3oCPDi9lqj7JAK+bY3JxQF+SdCxNcBYd5ePA==}
+  /@thirdweb-dev/contracts/3.5.4:
+    resolution: {integrity: sha512-gQ5ir+vSSDA5fwSp/aPrv2QyHNXZi//E0deW5aPNp4KPXKgP+4lQg0Vy+z5965z/GIKQECTcyleW1h1fA0izfA==}
     dev: true
 
   /@thirdweb-dev/sdk/2.5.2_ethers@5.7.2:
