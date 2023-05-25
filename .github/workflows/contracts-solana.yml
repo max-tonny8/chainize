@@ -25,7 +25,7 @@ env:
 jobs:
   test-workspace:
     runs-on: ubuntu-latest
-    container: projectserum/build:v0.24.2
+    container: projectserum/build:v0.27.0
     steps:
       - uses: actions/checkout@v3
 
