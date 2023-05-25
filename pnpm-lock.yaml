@@ -189,7 +189,7 @@ importers:
       '@nomiclabs/hardhat-ethers': 2.2.3
       '@nomiclabs/hardhat-etherscan': 3.1.7
       '@nomiclabs/hardhat-solhint': 2.0.1
-      '@nomiclabs/hardhat-waffle': 2.0.5
+      '@nomiclabs/hardhat-waffle': 2.0.6
       '@openzeppelin/hardhat-upgrades': 1.24.0
       '@thirdweb-dev/contracts': 3.5.0
       '@thirdweb-dev/sdk': 2.5.2
@@ -221,7 +221,7 @@ importers:
       '@nomiclabs/hardhat-ethers': 2.2.3_kftl4jxdh4nrzvmw72kgr5bdrq
       '@nomiclabs/hardhat-etherscan': 3.1.7_hardhat@2.14.0
       '@nomiclabs/hardhat-solhint': 2.0.1_hardhat@2.14.0
-      '@nomiclabs/hardhat-waffle': 2.0.5_22dfjv7rzmcdbmiechxuk3dhju
+      '@nomiclabs/hardhat-waffle': 2.0.6_276vzrulrsto7njsfacncjsfdy
       '@openzeppelin/hardhat-upgrades': 1.24.0_dd3hwbt7tuub5dzi3gdskdlauq
       '@thirdweb-dev/contracts': 3.5.0
       '@thirdweb-dev/sdk': 2.5.2_ethers@5.7.2
@@ -3439,15 +3439,17 @@ packages:
       - supports-color
     dev: true
 
-  /@nomiclabs/hardhat-waffle/2.0.5_22dfjv7rzmcdbmiechxuk3dhju:
-    resolution: {integrity: sha512-U1RH9OQ1mWYQfb+moX5aTgGjpVVlOcpiFI47wwnaGG4kLhcTy90cNiapoqZenxcRAITVbr0/+QSduINL5EsUIQ==}
+  /@nomiclabs/hardhat-waffle/2.0.6_276vzrulrsto7njsfacncjsfdy:
+    resolution: {integrity: sha512-+Wz0hwmJGSI17B+BhU/qFRZ1l6/xMW82QGXE/Gi+WTmwgJrQefuBs1lIf7hzQ1hLk6hpkvb/zwcNkpVKRYTQYg==}
     peerDependencies:
       '@nomiclabs/hardhat-ethers': ^2.0.0
+      '@types/sinon-chai': ^3.2.3
       ethereum-waffle: '*'
       ethers: ^5.0.0
       hardhat: ^2.0.0
     dependencies:
       '@nomiclabs/hardhat-ethers': 2.2.3_kftl4jxdh4nrzvmw72kgr5bdrq
+      '@types/sinon-chai': 3.2.9
       ethereum-waffle: 3.4.4_typescript@4.7.4
       ethers: 5.7.2
       hardhat: 2.14.0_bn3y5sn7aa6hsplivwol7ie4em
@@ -4760,6 +4762,23 @@ packages:
     resolution: {integrity: sha512-Da66lEIFeIz9ltsdMZcpQvmrmmoqrfju8pm1BH8WbYjZSwUgCwXLb9C+9XYogwBITnbsSaMdVPb2ekf7TV+03w==}
     dependencies:
       '@types/node': 12.20.55
+    dev: true
+
+  /@types/sinon-chai/3.2.9:
+    resolution: {integrity: sha512-/19t63pFYU0ikrdbXKBWj9PCdnKyTd0Qkz0X91Ta081cYsq90OxYdcWwK/dwEoDa6dtXgj2HJfmzgq+QZTHdmQ==}
+    dependencies:
+      '@types/chai': 4.3.5
+      '@types/sinon': 10.0.15
+    dev: true
+
+  /@types/sinon/10.0.15:
+    resolution: {integrity: sha512-3lrFNQG0Kr2LDzvjyjB6AMJk4ge+8iYhQfdnSwIwlG88FUOV43kPcQqDZkDa/h3WSZy6i8Fr0BSjfQtB1B3xuQ==}
+    dependencies:
+      '@types/sinonjs__fake-timers': 8.1.2
+    dev: true
+
+  /@types/sinonjs__fake-timers/8.1.2:
+    resolution: {integrity: sha512-9GcLXF0/v3t80caGs5p2rRfkB+a8VBGLJZVih6CNFkx8IZ994wiKKLSRs9nuFwk1HevWs/1mnUmkApGrSGsShA==}
     dev: true
 
   /@types/ws/7.4.7:
