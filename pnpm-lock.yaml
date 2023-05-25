@@ -252,13 +252,13 @@ importers:
       prettier: ^2.7.1
       prettier-plugin-packagejson: 2.4.3
       prettier-plugin-prisma: 3.14.0
-      prettier-plugin-properties: 0.1.0
+      prettier-plugin-properties: 0.2.0
       prettier-plugin-sh: 0.12.8
     dependencies:
       prettier: 2.7.1
       prettier-plugin-packagejson: 2.4.3_prettier@2.7.1
       prettier-plugin-prisma: 3.14.0_prettier@2.7.1
-      prettier-plugin-properties: 0.1.0_prettier@2.7.1
+      prettier-plugin-properties: 0.2.0
       prettier-plugin-sh: 0.12.8_prettier@2.7.1
 
   packages/solana-coinflip:
@@ -12365,10 +12365,6 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /linguist-languages/7.21.0:
-    resolution: {integrity: sha512-KrWJJbFOvlDhjlt5OhUipVlXg+plUfRurICAyij1ZVxQcqPt/zeReb9KiUVdGUwwhS/2KS9h3TbyfYLA5MDlxQ==}
-    dev: false
-
   /load-json-file/1.1.0:
     resolution: {integrity: sha512-cy7ZdNRXdablkXYNI049pthVeXFurRyb9+hA/dZzerZ0pGTx42z+y+ssxBaVV2l70t1muq5IdKhn4UtcoGUY9A==}
     engines: {node: '>=0.10.0'}
@@ -14532,14 +14528,10 @@ packages:
       prettier: 2.7.1
     dev: false
 
-  /prettier-plugin-properties/0.1.0_prettier@2.7.1:
-    resolution: {integrity: sha512-lObSgVaTVWSyYWxKMOzRGmvQp64S1qumu5vS91ZlMc198ay8EGUuDH+Tc019iMJXc2KNpdAYif2qAJA6mjTkgA==}
-    peerDependencies:
-      prettier: '>=1.11.0'
+  /prettier-plugin-properties/0.2.0:
+    resolution: {integrity: sha512-Mt+z2nPkG+apJJLxfv8/Z/knhF/pTFUyxTeaRCuvQhs33rzQEkquGXSyKyvcWfijOTlOvB6KnmSJXpmblLNYrQ==}
     dependencies:
       dot-properties: 1.0.1
-      linguist-languages: 7.21.0
-      prettier: 2.7.1
     dev: false
 
   /prettier-plugin-sh/0.12.8_prettier@2.7.1:
